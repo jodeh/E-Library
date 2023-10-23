@@ -1,6 +1,6 @@
 /* Start Variables */
 :root {
-    --main-color : #10cab7;
+    --main-color : #176b87;
     --secondary-color:#2c4755;
     --section-padding: 60px;
     --section-background: #f6f6f6 ;
@@ -71,7 +71,7 @@ body {
 /* Start Header */
 .header {
     padding: 20px;
-    background-color: #10cab7;
+    background-color: var(--main-color);
 }
 .header .container {
     display: flex;
@@ -81,6 +81,10 @@ body {
 }
 .header .logo {
     width: 60px;
+    display: flex;
+    justify-content: flex-start;
+    position: relative;
+    right: 200px;
 }
 .search-container {
     display: flex;
@@ -105,8 +109,10 @@ button {
     margin-left: 10px;
     cursor: pointer;
 }
+
 .header .links {
     position: relative;
+    left: 275px;
 }
 .header .links:hover .icon span:nth-child(2) {
     width: 100%;
@@ -118,7 +124,7 @@ button {
     justify-content: flex-end;
 }
 .header .links .icon span {
-    background-color: #333;
+    background-color: #fff;
     margin-bottom: 5px;
 }
 .header .links .icon span:first-child {
@@ -183,5 +189,6 @@ button {
     display: flex;
     flex-wrap: wrap; 
     justify-content: flex-end;
-    left: -310px;
+    left: -35px;
+    color: #fff;
 }
