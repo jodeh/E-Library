@@ -1,0 +1,108 @@
+﻿@model IEnumerable<e_library.Models.Specialist>
+
+@{
+    ViewData["Title"] = "Index";
+}
+<!DOCTYPE html>
+<!-- not joda-->
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!--css file-->
+    <link rel="stylesheet" href="~/assets/css/main.css">
+    <link rel="stylesheet" href="~/assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="~/assets/css/normalize.css">
+    <!--font Awesome-->
+    <link rel="stylesheet" href="~/assets/fontawesome-free-6.4.2-web/css/all.css">
+    <link rel="stylesheet" href="~/assets/fontawesome-free-6.4.2-web/css/all.min.css">
+    <!--Google font-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display&display=swap" rel="stylesheet">
+    <title>E-Library</title>
+</head>
+<body>
+    <!--Start Header-->
+    <header>
+        <div class="header">
+            <div class="container">
+                <img class="logo" src="~/assets/img/Logo.png" alt="">
+                <form class="search-box" asp-action="Search" asp-controller="Specialist">
+                    <div class="search-box"  >
+                        <input type="text" id="search" placeholder="Search..." >
+                        
+                        <i class="fa-solid fa-magnifying-glass" ></i>
+                     
+                    </div>
+                </form>
+                
+                <div class="profile">
+                    <i class="fa-solid fa-user"></i>
+                    <i class="fa-solid fa-bars"></i>
+                </div>
+            </div>
+        </div>
+    </header>
+    <!--End Header-->
+    <!--start Main page-->
+    <!-- Start Landing -->
+    <div class="row">
+        <div class="col1">
+            <h2>E-Library</h2>
+            <h4>Explore, Discover, Learn.</h4>
+        </div>
+        <div class="col2">
+            <img src="~/assets/img/7228-01.png" class="book">
+        </div>
+    </div>
+    <!-- End Landing -->
+    <div class="container-main">
+        @foreach (var item in Model)
+        {
+            <div class="card-computer">
+                <img src="~/Images/@item.SpecialestImageurl" class="card-img-top" alt="...">
+                <div class="card-body">
+                    <h5 class="card-title" href="@item.SpecialistName">@item.SpecialistName</h5>
+                    <a asp-action="Details" asp-route-id="@item.SpecialistId" class="btn btn-primary">Details</a>
+                </div>
+            </div>
+        }
+        </div>
+       @* <div class="card-computer">
+            <img src="~/assets/img/card computer main.jpg" class="card-img-top" alt="...">
+            <div class="card-body">
+                <h5 class="card-title">Computer Engineering</h5>
+                <a href="#" class="btn btn-primary">Go somewhere</a>
+            </div>
+        </div>
+        <div class="card-network">
+            <img src="~/assets/img/card network main.jpg" class="card-img-top" alt="...">
+            <div class="card-body">
+                <h5 class="card-title">Network Engineering</h5>
+                <a href="#" class="btn btn-primary">Go somewhere</a>
+            </div>
+        </div>
+        <div class="card-programming">
+            <img src="~/assets/img/card programmer main.jpg" class="card-img-top" alt="...">
+            <div class="card-body">
+                <h5 class="card-title">programming</h5>
+                <a href="#" class="btn btn-primary">Go somewhere</a>
+            </div>
+        </div>
+    </div>*@
+    <!--End Main page-->
+    <!--start footer-->
+    <div class="footer">
+        <div class="container-footer">
+            <div class="copyright">
+                <span>E-Library</span>
+                <p>Created by{ Abdullah Amin , Abdullah Jodeh & Taha Hdaib }</p>
+                <p class="eng">Supervised by { MEng. Nawal Amin Al-Zabin }</p>
+                <span>© 2023/2024</span>
+            </div>
+        </div>
+    </div>
+    <!--end footer-->
+</body>
+</html>

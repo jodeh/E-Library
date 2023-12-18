@@ -1,0 +1,36 @@
+﻿@model IEnumerable<e_library.Models.SubjectFiles>
+
+@{
+    ViewData["Title"] = "pdfs";
+}
+
+<h1>pdfs</h1>
+
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.SubjectFileName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.SubjectFileURL)
+            </th>
+           
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.SubjectFileName)
+            </td>
+               <td>
+
+                        <a href="~/Images/@item.SubjectFileURL" target="_blank">    <img src="~/Images/@item.SubjectFileURL" /></a>
+         </td>
+           
+        </tr>
+}
+    </tbody>
+</table>

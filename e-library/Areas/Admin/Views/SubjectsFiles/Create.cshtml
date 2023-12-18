@@ -1,0 +1,71 @@
+﻿@model e_library.ViewModels.SubjectFilesViewModel
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1>Create</h1>
+
+<h4>SubjectFiles</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Create" enctype="multipart/form-data">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="SubjectFileName" class="control-label"></label>
+                <input asp-for="SubjectFileName" class="form-control" />
+                <span asp-validation-for="SubjectFileName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="File" class="control-label"></label>
+                <input asp-for="File" class="form-control" />
+                <span asp-validation-for="File" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <label asp-for="SubjectFileURLOthers" class="control-label"></label>
+                <input asp-for="SubjectFileURLOthers" class="form-control" />
+                <span asp-validation-for="SubjectFileURLOthers" class="text-danger"></span>
+            </div>
+            @*<div class="form-group">
+            <label asp-for="SubjectFileURL" class="control-label"></label>
+            <input asp-for="SubjectFileURL" class="form-control" />
+            <span asp-validation-for="SubjectFileURL" class="text-danger"></span>
+            </div>*@
+            <div class="form-group">
+                <label asp-for="SubjectDescription" class="control-label"></label>
+                <input asp-for="SubjectDescription" class="form-control" />
+                <span asp-validation-for="SubjectDescription" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="LookupMediaTypeId" class="control-label"></label>
+
+                <select asp-for="LookupMediaTypeId" class="form-control form-select"
+                        asp-items='@(new SelectList(ViewBag.ListLuk,"LookupMediaTypeId","LookupMediaTypeName"))'>
+                </select>
+                <span asp-validation-for="SubjectId" class="text-danger"></span>
+            </div>
+            @* <div class="form-group">
+            <label asp-for="SubjectId" class="control-label"></label>
+            <select asp-for="SubjectId" class ="form-control" asp-items="ViewBag.SubjectId"></select>
+            </div>*@
+            <div class="form-group">
+                <label asp-for="SubjectId" class="control-label"></label>
+
+                <select asp-for="SubjectId" class="form-control form-select"
+                        asp-items='@(new SelectList(ViewBag.Listsub,"SubjectId","SubjectName"))'>
+                </select>
+                <span asp-validation-for="SubjectId" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+

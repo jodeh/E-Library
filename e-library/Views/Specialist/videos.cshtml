@@ -1,0 +1,39 @@
+﻿@model IEnumerable<e_library.Models.SubjectFiles>
+
+@{
+    ViewData["Title"] = "videos";
+}
+
+<h1>videos</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.SubjectFileName)
+            </th>
+           
+            <th>
+                @Html.DisplayNameFor(model => model.SubjectFileURLOthers)
+            </th>
+          
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.SubjectFileName)
+            </td>
+           
+                <td>
+                        <a href="@item.SubjectFileURLOthers">@item.SubjectFileURLOthers</a>
+                    </td>
+
+               
+        </tr>
+}
+    </tbody>
+</table>

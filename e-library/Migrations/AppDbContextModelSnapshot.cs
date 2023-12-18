@@ -19,6 +19,76 @@ namespace e_library.Migrations
                 .HasAnnotation("ProductVersion", "5.0.17")
                 .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
+            modelBuilder.Entity("Restaurant.Models.AppUser", b =>
+                {
+                    b.Property<string>("Id")
+                        .HasColumnType("nvarchar(450)");
+
+                    b.Property<int>("AccessFailedCount")
+                        .HasColumnType("int");
+
+                    b.Property<string>("ConcurrencyStamp")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<DateTime?>("CreateDate")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("CreateUser")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<DateTime?>("EditDate")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("EditUser")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Email")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<bool>("EmailConfirmed")
+                        .HasColumnType("bit");
+
+                    b.Property<bool>("IsActive")
+                        .HasColumnType("bit");
+
+                    b.Property<bool>("IsDelete")
+                        .HasColumnType("bit");
+
+                    b.Property<bool>("LockoutEnabled")
+                        .HasColumnType("bit");
+
+                    b.Property<DateTimeOffset?>("LockoutEnd")
+                        .HasColumnType("datetimeoffset");
+
+                    b.Property<string>("NormalizedEmail")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("NormalizedUserName")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("PasswordHash")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("PhoneNumber")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<bool>("PhoneNumberConfirmed")
+                        .HasColumnType("bit");
+
+                    b.Property<string>("SecurityStamp")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<bool>("TwoFactorEnabled")
+                        .HasColumnType("bit");
+
+                    b.Property<string>("UserName")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("AppUser");
+                });
+
             modelBuilder.Entity("e_library.Models.Admin_info", b =>
                 {
                     b.Property<string>("Id")
@@ -89,6 +159,36 @@ namespace e_library.Migrations
                     b.ToTable("Admin_info");
                 });
 
+            modelBuilder.Entity("e_library.Models.LookupMediaType", b =>
+                {
+                    b.Property<int>("LookupMediaTypeId")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<string>("LookupMediaTypeName")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("LookupMediaTypeId");
+
+                    b.ToTable("LookupMediaType");
+                });
+
+            modelBuilder.Entity("e_library.Models.LookupTypeMedia", b =>
+                {
+                    b.Property<int>("LookupTypeMediaId")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<int>("LookupTypeMediaName")
+                        .HasColumnType("int");
+
+                    b.HasKey("LookupTypeMediaId");
+
+                    b.ToTable("LookupTypeMedia");
+                });
+
             modelBuilder.Entity("e_library.Models.Specialist", b =>
                 {
                     b.Property<int>("SpecialistId")
@@ -117,6 +217,9 @@ namespace e_library.Migrations
                     b.Property<int>("SpecialistId")
                         .HasColumnType("int");
 
+                    b.Property<string>("SpecialistName")
+                        .HasColumnType("nvarchar(max)");
+
                     b.Property<string>("SubjectImageurl")
                         .HasColumnType("nvarchar(max)");
 
@@ -137,6 +240,9 @@ namespace e_library.Migrations
                         .HasColumnType("int")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
+                    b.Property<int>("LookupTypeMediaId")
+                        .HasColumnType("int");
+
                     b.Property<string>("SubjectDescription")
                         .HasColumnType("nvarchar(max)");
 
@@ -153,6 +259,8 @@ namespace e_library.Migrations
                         .HasColumnType("int");
 
                     b.HasKey("SubjectFileId");
+
+                    b.HasIndex("LookupTypeMediaId");
 
                     b.HasIndex("SubjectId");
 
@@ -172,11 +280,19 @@ namespace e_library.Migrations
 
             modelBuilder.Entity("e_library.Models.SubjectFiles", b =>
                 {
+                    b.HasOne("e_library.Models.LookupTypeMedia", "LookupTypeMedia")
+                        .WithMany()
+                        .HasForeignKey("LookupTypeMediaId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
                     b.HasOne("e_library.Models.Subject", "Subjects")
                         .WithMany()
                         .HasForeignKey("SubjectId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
+
+                    b.Navigation("LookupTypeMedia");
 
                     b.Navigation("Subjects");
                 });

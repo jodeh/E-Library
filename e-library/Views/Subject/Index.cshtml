@@ -1,0 +1,46 @@
+﻿@model IEnumerable<e_library.Models.Subject>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.SubjectName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.SubjectImageurl)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.SpecialistName)
+            </th>
+           
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.SubjectName)
+            </td>
+
+                    <td>
+                    @*                @Html.DisplayFor(modelItem => item.SpecialestImageurl)
+                *@
+                        <img src="~/Images/@item.SubjectImageurl" />
+                    </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.SpecialistName)
+            </td>
+           
+           
+        </tr>
+}
+    </tbody>
+</table>

@@ -1,6 +1,7 @@
 using e_library.Data;
 using e_library.Models;
 using e_library.Models.Repositories;
+using e_library.ViewModels;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
@@ -32,7 +33,9 @@ namespace e_library
 
             services.AddScoped<IRepository<Specialist>, SpecialestRepository>();
             services.AddScoped<IRepository<Subject>, SubjectRepository>();
+          
             services.AddScoped<IRepository<SubjectFiles>, SubjectFilesRepository>();
+            services.AddScoped<IRepository<LookupMediaType>, LookupMediaTypeRepository>();
             services.AddIdentity<IdentityUser, IdentityRole>().AddEntityFrameworkStores<AppDbContext>();
             services.AddDbContext<AppDbContext>(x =>
             {

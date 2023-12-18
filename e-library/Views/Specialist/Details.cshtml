@@ -1,0 +1,58 @@
+﻿@model IEnumerable<e_library.Models.Subject>
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h1>Details</h1>
+
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.SubjectName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.SubjectImageurl)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.SpecialistName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Specialists)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        
+        
+            @foreach (var item in Model)
+            {
+             
+                <tr>
+                    <td>
+                @Html.DisplayFor(modelItem => item.SubjectName)
+            </td>
+            <td>
+                @*@Html.DisplayFor(modelItem => item.SubjectImageurl)*@
+                    <img src="~/Images/@item.SubjectImageurl" style="max-width:100px;" />
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.SpecialistName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Specialists.SpecialistId)
+            </td>
+            @*<td>
+                <a asp-action="Edit" asp-route-id="@item.SubjectId">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.SubjectId">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.SubjectId">Delete</a>
+            </td>*@
+                <td><a asp-action="pdfs" asp-route-id="@item.SubjectId">pdfs</a>||  <a asp-action="videos" asp-route-id="@item.SubjectId">videos</a></td>
+        </tr>
+        
+}
+    </tbody>
+</table>

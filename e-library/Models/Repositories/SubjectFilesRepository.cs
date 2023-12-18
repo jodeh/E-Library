@@ -1,4 +1,5 @@
 ﻿using e_library.Data;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 
@@ -30,6 +31,11 @@ namespace e_library.Models.Repositories
             return data;
         }
 
+        public SubjectFiles Search(string entity)
+        {
+            throw new NotImplementedException();
+        }
+
         public void Update(int Id, SubjectFiles entity)
         {
             Db.SubjectFiles.Update(entity);
@@ -40,6 +46,20 @@ namespace e_library.Models.Repositories
         {
             return Db.SubjectFiles.ToList();
 
+
+
+        }
+
+        public object Where(Func<object, bool> value)
+        {
+            throw new NotImplementedException();
+        }
+
+       
+
+        List<SubjectFiles> IRepository<SubjectFiles>.Search(string entity)
+        {
+            throw new NotImplementedException();
         }
     }
 }

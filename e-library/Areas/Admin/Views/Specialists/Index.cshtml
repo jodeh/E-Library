@@ -37,12 +37,13 @@
                 <td>
                     @*                @Html.DisplayFor(modelItem => item.SpecialestImageurl)
                 *@
-                    <img src="~/Images/@item.SpecialestImageurl" />
+                    <img src="~/Images/@item.SpecialestImageurl " width="30px" height="30px" />
                 </td>
                 <td>
                     <a asp-action="Edit" asp-route-id="@item.SpecialistId">Edit</a> |
                     <a asp-action="Details" asp-route-id="@item.SpecialistId">Details</a> |
                     <a asp-action="Delete" asp-route-id="@item.SpecialistId">Delete</a>
+                   
                 </td>
             </tr>
         }

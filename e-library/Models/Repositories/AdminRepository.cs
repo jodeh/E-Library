@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 
 namespace e_library.Models.Repositories
 {
@@ -19,6 +20,16 @@ namespace e_library.Models.Repositories
             throw new System.NotImplementedException();
         }
 
+        public void Search(Admin_info entity)
+        {
+            throw new System.NotImplementedException();
+        }
+
+        public Admin_info Search(string entity)
+        {
+            throw new NotImplementedException();
+        }
+
         public void Update(int Id, Admin_info entity)
         {
             throw new System.NotImplementedException();
@@ -28,5 +39,24 @@ namespace e_library.Models.Repositories
         {
             throw new System.NotImplementedException();
         }
+
+        public object Where(Func<object, bool> value)
+        {
+            throw new NotImplementedException();
+        }
+
+       
+
+        List<Admin_info> IRepository<Admin_info>.Search(string entity)
+        {
+            throw new NotImplementedException();
+        }
+
+
+
+        //Admin_info IRepository<Admin_info>.Search(Admin_info entity)
+        //{
+        //    throw new System.NotImplementedException();
+        //}
     }
 }

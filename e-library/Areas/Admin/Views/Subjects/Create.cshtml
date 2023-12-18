@@ -27,6 +27,9 @@
                 @*<input asp-for="SpecialistId" class="form-control" />*@
                 <select asp-for="SpecialistId" class="form-control form-select"
                         asp-items='@(new SelectList(ViewBag.Listsp,"SpecialistId","SpecialistName"))'>
+
+                    
+
                 </select>
                 <span asp-validation-for="SpecialistId" class="text-danger"></span>
             </div>

@@ -2,7 +2,13 @@
 using e_library.Models.Repositories;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using System.Linq;
+using Microsoft.CodeAnalysis;
 using System.Collections.Generic;
+using System.Collections.Specialized;
+using System.Security.Cryptography.X509Certificates;
+using e_library.ViewModels;
+using System.Threading.Tasks;
 
 namespace e_library.Controllers
 {
@@ -10,9 +16,15 @@ namespace e_library.Controllers
     {
         // GET: SpecialistController
         public IRepository<Specialist> Specialists { get; }
-        public SpecialistController(IRepository<Specialist> _specialists)
+        public IRepository<Subject> Subjects { get; }
+        IRepository<SubjectFiles> SubjectFiles { get; }
+        IRepository<LookupMediaType> LookupMediaType { get; }
+        public SpecialistController(IRepository<Specialist> _specialists, IRepository<Subject> _Subjects, IRepository<SubjectFiles> _subjectFiles, IRepository<LookupMediaType> lookupMediaType)
         {
             Specialists = _specialists;
+            Subjects = _Subjects;
+            SubjectFiles = _subjectFiles;
+            LookupMediaType = lookupMediaType;
         }
 
         public ActionResult Index()
@@ -22,10 +34,50 @@ namespace e_library.Controllers
             return View(data);
         }
 
+        [HttpGet]
+
+
         // GET: SpecialistController/Details/5
         public ActionResult Details(int id)
         {
-            return View();
+            
+            var data = Specialists.Find(id);
+            IEnumerable<Subject> _SUbjects =  Subjects.View();
+            var obj = _SUbjects.Where(x => x.SpecialistId == data.SpecialistId);
+            
+
+            return View(obj);
+
+       
+        }
+        public ActionResult Search(string entity)
+        {
+            var obj=Specialists.Search(entity);
+
+            return View("Index", obj);
+        }
+
+        public ActionResult pdfs(int id)
+        {
+
+
+            var data = Subjects.Find(id);
+            IEnumerable<SubjectFiles> _SUbjects = SubjectFiles.View();
+            var obj = _SUbjects.Where(x => x.LookupMediaTypeId == 1 && x.SubjectId == data.SubjectId);
+
+
+            return View(obj);
+        } 
+        public ActionResult videos(int id)
+        {
+
+
+            var data = Subjects.Find(id);
+            IEnumerable<SubjectFiles> _SUbjects = SubjectFiles.View();
+            var obj = _SUbjects.Where(x => x.LookupMediaTypeId == 2 && x.SubjectId == data.SubjectId);
+
+
+            return View(obj);
         }
 
         // GET: SpecialistController/Create

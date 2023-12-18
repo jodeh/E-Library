@@ -72,11 +72,15 @@ namespace e_library.Area.Admin.Controlers
                 {
 
                     SpecialistId = collection.SpecialistId,
+                    
+                    
 
                     SubjectId = collection.SubjectId,
 
                     SubjectImageurl = ImageName,
                     SubjectName = collection.SubjectName
+                    ,
+                    SpecialistName= collection.SpecialistName,
 
 
 
@@ -102,12 +106,16 @@ namespace e_library.Area.Admin.Controlers
         // GET: SubjectsController/Edit/5
         public ActionResult Edit(int id)
         {
+            ViewBag.Listsp = Specialists.View();
 
             var data = Subjects.Find(id);
             SubjectViewModel obj= new SubjectViewModel();
             obj.SubjectId = data.SubjectId;
             obj.SubjectName = data.SubjectName;
             obj.SubjectImageurl = data.SubjectImageurl;
+            obj.SpecialistId = data.SpecialistId;
+            obj.SpecialistName= data.SpecialistName;
+            
             return View(obj);
         }
 
@@ -139,10 +147,12 @@ namespace e_library.Area.Admin.Controlers
                     SpecialistId = collection.SpecialistId,
 
                     SubjectName = collection.SubjectName,
+                    SpecialistName=collection.SpecialistName
+                    ,
 
-                    SubjectImageurl = ImageName,
+                    SubjectImageurl = ImageName==""? collection.SubjectImageurl : ImageName,
 
-
+                    
 
                 };
 

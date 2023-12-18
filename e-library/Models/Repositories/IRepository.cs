@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 
 namespace e_library.Models.Repositories
 {
@@ -13,7 +14,8 @@ namespace e_library.Models.Repositories
         void Delete(int Id, TEntity entity);
 
         TEntity Find(int Id);
-        
+        object Where(Func<object, bool> value);
+        List<TEntity> Search(string entity);
 
     }
 }

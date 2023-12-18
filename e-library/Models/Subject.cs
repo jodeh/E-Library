@@ -10,6 +10,7 @@ namespace e_library.Models
         public string SubjectName { get; set; }
         public string SubjectImageurl { get; set; }
         public int SpecialistId { get; set; }
+        public string SpecialistName { get; set; }
         public Specialist Specialists { get; set; }
 
     }

@@ -1,5 +1,6 @@
 ﻿using e_library.Models;
 using Microsoft.EntityFrameworkCore;
+using Restaurant.Models;
 
 namespace e_library.Data
 {
@@ -14,5 +15,8 @@ namespace e_library.Data
         public DbSet<Specialist> Specialist { get; set; }
         public DbSet<Subject> Subject { get; set; }
         public DbSet<SubjectFiles> SubjectFiles { get; set; }
+        public DbSet<AppUser> AppUser { get; set; }
+        //public DbSet<LookupTypeMedia> LookupTypeMedia { get; set; }
+        public DbSet<LookupMediaType> LookupMediaType { get; set; }
     }
 }

@@ -166,3 +166,16 @@ C:\Users\iaz\Desktop\e-library project\e-library\e-library\obj\Debug\net5.0\Razo
 C:\Users\iaz\Desktop\e-library project\e-library\e-library\obj\Debug\net5.0\Razor\Areas\Admin\Views\Subjects\Create.cshtml.g.cs
 C:\Users\iaz\Desktop\e-library project\e-library\e-library\obj\Debug\net5.0\Razor\Areas\Admin\Views\Subjects\Edit.cshtml.g.cs
 C:\Users\iaz\Desktop\e-library project\e-library\e-library\obj\Debug\net5.0\Razor\Areas\Admin\Views\Subjects\Delete.cshtml.g.cs
+C:\Users\iaz\Desktop\e-library project\e-library\e-library\obj\Debug\net5.0\Razor\Areas\Admin\Views\SubjectsFiles\Index.cshtml.g.cs
+C:\Users\iaz\Desktop\e-library project\e-library\e-library\obj\Debug\net5.0\Razor\Areas\Admin\Views\SubjectsFiles\Details.cshtml.g.cs
+C:\Users\iaz\Desktop\e-library project\e-library\e-library\obj\Debug\net5.0\Razor\Areas\Admin\Views\SubjectsFiles\Create.cshtml.g.cs
+C:\Users\iaz\Desktop\e-library project\e-library\e-library\obj\Debug\net5.0\Razor\Areas\Admin\Views\SubjectsFiles\Edit.cshtml.g.cs
+C:\Users\iaz\Desktop\e-library project\e-library\e-library\obj\Debug\net5.0\Razor\Areas\Admin\Views\SubjectsFiles\Delete.cshtml.g.cs
+C:\Users\iaz\Desktop\e-library project\e-library\e-library\obj\Debug\net5.0\Razor\Views\Specialist\Index.cshtml.g.cs
+C:\Users\iaz\Desktop\e-library project\e-library\e-library\obj\Debug\net5.0\Razor\Views\Subject\Index.cshtml.g.cs
+C:\Users\iaz\Desktop\e-library project\e-library\e-library\obj\Debug\net5.0\Razor\Views\Specialist\Details.cshtml.g.cs
+C:\Users\iaz\Desktop\e-library project\e-library\e-library\obj\Debug\net5.0\Razor\Areas\Admin\Views\LookUp\Index.cshtml.g.cs
+C:\Users\iaz\Desktop\e-library project\e-library\e-library\obj\Debug\net5.0\Razor\Areas\Admin\Views\LookUp\Create.cshtml.g.cs
+C:\Users\iaz\Desktop\e-library project\e-library\e-library\obj\Debug\net5.0\Razor\Views\Subject\pdfs.cshtml.g.cs
+C:\Users\iaz\Desktop\e-library project\e-library\e-library\obj\Debug\net5.0\Razor\Views\Specialist\pdfs.cshtml.g.cs
+C:\Users\iaz\Desktop\e-library project\e-library\e-library\obj\Debug\net5.0\Razor\Views\Specialist\videos.cshtml.g.cs
