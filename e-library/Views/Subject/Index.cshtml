@@ -4,43 +4,130 @@
     ViewData["Title"] = "Index";
 }
 
-<h1>Index</h1>
-
-
-<table class="table">
-    <thead>
-        <tr>
-            <th>
-                @Html.DisplayNameFor(model => model.SubjectName)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.SubjectImageurl)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.SpecialistName)
-            </th>
-           
-            <th></th>
-        </tr>
-    </thead>
-    <tbody>
-@foreach (var item in Model) {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.SubjectName)
-            </td>
-
-                    <td>
-                    @*                @Html.DisplayFor(modelItem => item.SpecialestImageurl)
-                *@
-                        <img src="~/Images/@item.SubjectImageurl" />
-                    </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.SpecialistName)
-            </td>
-           
-           
-        </tr>
-}
-    </tbody>
-</table>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!--css file-->
+    <link rel="stylesheet" href="~/assets/css/main.css">
+    <link rel="stylesheet" href="~/assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="~/assets/css/normalize.css">
+    <link rel="stylesheet" href="~/assets/css/all.min.css">
+    <!-- font Awesome-->
+    <link rel="stylesheet" href="~/fontawesome-free-6.4.2-web/css/all.css">
+    <link rel="stylesheet" href="~/fontawesome-free-6.4.2-web/css/all.min.css">
+    <!--google font-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display&display=swap" rel="stylesheet">
+    <title>Computer Engineering</title>
+</head>
+<body>
+    <!--Start Header-->
+    <div class="header">
+        <div class="container">
+            <img class="logo" src="~/assets/img/Logo.png" alt="">
+            <div class="search-box">
+                <input type="text" id="search" placeholder="Search...">
+                <i class="fa-solid fa-magnifying-glass"></i>
+            </div>
+            <div class="profile">
+                <i class="fa-solid fa-user"></i>
+                <i class="fa-solid fa-bars"></i>
+            </div>
+        </div>
+    </div>
+    <!--End Header-->
+    <!--start computer page-->
+    <!-- Start Landing -->
+    <div class="row">
+        <div class="col1">
+            <h2>Computer Engineering</h2>
+        </div>
+    </div>
+    <!-- End Landing -->
+    <div class="container-main">
+        <div class="card-embedded-system">
+            <img src="~/Computer eng/assets/img/embedded-01.jpg" class="card-img-top" alt="...">
+            <div class="card-body">
+                <h5 class="card-title">Embedded System</h5>
+                <a href="#" class="btn btn-primary">Recorces</a>
+            </div>
+        </div>
+        @*<div class="card-computer-Arc-org">
+            <img src="./assets/img/computer arch-01.jpg" class="card-img-top" alt="...">
+            <div class="card-body">
+                <h5 class="card-title">Computer Architecture and Organisation</h5>
+                <a href="#" class="btn btn-primary">Recorces</a>
+            </div>
+        </div>
+        <div class="card-digital">
+            <img src="./assets/img/logic-01.jpg" class="card-img-top" alt="...">
+            <div class="card-body">
+                <h5 class="card-title">Digital Logic Design</h5>
+                <a href="#" class="btn btn-primary">Recorces</a>
+            </div>
+        </div>
+    </div>
+    <div class="container-main">
+        <div class="card-os">
+            <img src="./assets/img/os.jpg" class="card-img-top" alt="...">
+            <div class="card-body">
+                <h5 class="card-title">Operating System</h5>
+                <a href="#" class="btn btn-primary">Recorces</a>
+            </div>
+        </div>
+        <div class="card-assembly">
+            <img src="./assets/img/binary machine language.jpg" class="card-img-top" alt="...">
+            <div class="card-body">
+                <h5 class="card-title">Assembly Language</h5>
+                <a href="#" class="btn btn-primary">Recorces</a>
+            </div>
+        </div>
+        <div class="card-parallel">
+            <img src="./assets/img/Parallel Processing.jpg" class="card-img-top" alt="...">
+            <div class="card-body">
+                <h5 class="card-title">Parallel Processing</h5>
+                <a href="#" class="btn btn-primary">Recorces</a>
+            </div>
+        </div>
+    </div>
+    <div class="container-main">
+        <div class="card-control">
+            <img src="./assets/img/arduino-1128227_1920.jpg" class="card-img-top" alt="...">
+            <div class="card-body">
+                <h5 class="card-title">Control System</h5>
+                <a href="#" class="btn btn-primary">Recorces</a>
+            </div>
+        </div>
+        <div class="card-electrical">
+            <img src="./assets/img/Electrical Circuit.jpg" class="card-img-top" alt="...">
+            <div class="card-body">
+                <h5 class="card-title">Electrical Circuit 1 & 2</h5>
+                <a href="#" class="btn btn-primary">Recorces</a>
+            </div>
+        </div>
+        <div class="card-digital-electronic">
+            <img src="./assets/img/electronic digital.jpg" class="card-img-top" alt="...">
+            <div class="card-body">
+                <h5 class="card-title">Digital Electronic</h5>
+                <a href="#" class="btn btn-primary">Recorces</a>
+            </div>
+        </div>*@
+    </div>
+    <!--End computer page-->
+    <!--start footer-->
+    <div class="footer">
+        <div class="container-footer">
+            <div class="copyright">
+                <span>E-Library</span>
+                <p>Created by{ Abdullah Amin , Abdullah Jodeh & Taha Hdaib }</p>
+                <p class="eng">Supervised by { MEng. Nawal Amin Al-Zabin }</p>
+                <span>© 2023/2024</span>
+            </div>
+        </div>
+    </div>
+    <!--end footer-->
+</body>
+</html>
